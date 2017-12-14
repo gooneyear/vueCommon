@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #boxWarningBrowserUnsupported{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: hsl(310, 40%, 90%);
+        background-image: url(./static/images/chrome.png);
+        background-position: left 10px center;
+        background-repeat: no-repeat;
+        padding-left: 100px;
+      }
+      .std{
+        color: #0a81e5;
+        font-weight: bold;
+      }
+      .hidden{
+        display: none;
+      }
+    </style>
+    <meta charset="utf-8">
+    <!--以下两行防止在pad上点击表单时自动放大的问题-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,maximum-scale=1.0,user-scalable=no">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon"/>
+    <title>六六脑脑康复云医生端</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="./static/js/constants.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <div id="boxWarningBrowserUnsupported" class="warning hidden" >
+      <p>您的浏览器很可能无法正确显示页面。</p>
+      <p>建议您使用 Google Chrome 或类似的浏览器。</p>
+      <p><a href="http://dl.pconline.com.cn/download/51614-1.html" target="download-chrome" class="std">现在就去下载 Google Chrome 吗？</a></p>
+    </div>
+    <div id='dialog-wrapper'>
+      <div id='modal-dialog'
+        style = '
+        '
+      >
+    </div>
+    </div>
+  </body>
+<!-- <script src="https://www.sobot.com/chat/frame/js/entrance.js?sysNum=a523d1984e4c4b24b485096788a3ee81"
+class="zhiCustomBtn" id="zhichiScript" data-args="customBtn=true&invite=0&powered=false&manual=false"></script> -->
+<script>
+  var checkBrowser = function() {
+    if (!/webkit/i.test(navigator.userAgent.toLowerCase())) {
+      $('#boxWarningBrowserUnsupported').removeClass('hidden');
+      $('#boxWarningBrowserUnsupported').show();
+      return $('body>main').css('padding-bottom', $('#boxWarningBrowserUnsupported').height() + 'px');
+    }
+  };
+  $(function(){
+    checkBrowser();
+  });
+</script>
+
+</html>

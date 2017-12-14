@@ -1,0 +1,122 @@
+  @import "./variable.styl"
+
+/*以下是弹出框的样式定义*/
+  .modal-mask
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    z-index 2!important
+    background-color rgba(0, 0, 0, .5)
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    transition opacity .3s ease
+  .modal-wrapper
+    max-height 800px
+    max-width 1024px
+    display table-cell
+    vertical-align middle
+    text-align center
+  .modal-container
+    @media screen and (max-height: 800px)
+      max-height 90vh
+      max-width 90vw
+      min-height 300px
+    max-width 1024px
+    max-height: 800px
+    margin 0 auto
+    background-color #fff
+    border-radius 2px
+    box-shadow 0 2px 8px rgba(0, 0, 0, .33)
+    transition all .3s ease
+    font-family Helvetica, Arial, sans-serif
+    display flex
+    flex-direction column
+  .modal-header
+    height 80px
+    line-height 80px
+    border-bottom 1px solid #eee
+  .modal-header h3
+    color #444
+    font-size 16px
+    margin:0;
+  .modal-body
+    color #666
+    flex-grow 1
+    overflow auto
+    .newInput
+      border-radius 0
+      background-color #f8f8f8
+      border 1px solid #eee
+      height 36px
+      width 298px
+    .sex
+      margin-right 35px
+    .sexBtn
+      border-radius 0
+      width $top-height
+      height 40px
+    .sexColor
+      background-color #0a81e5
+    input
+      margin-left -4px
+    p
+      text-align left
+      margin 20px 0 10px 240px
+    li
+      margin-top 30px
+    .modalMenu
+      border-bottom 1px solid #eee
+      max-height 120px
+      overflow auto
+      span
+        display inline-block
+        width 112px
+        height $menu-height
+        line-height $menu-height
+        text-align center
+      span:hover
+        background #f5f5f5
+    .modalList
+      @media screen and (max-height: 800px)
+        min-height 150px
+        max-height 400px
+      min-height 350px
+      flex-grow: 1
+      overflow auto
+    .itemName
+      height 40px
+      line-height 40px
+      border 1px solid #eee
+      vertical-align middle
+      text-align center
+      opacity 0.8
+  .modal-footer
+    margin-right 30px
+    height 80px
+    line-height 80px
+    button
+      margin-left 30px
+
+
+  /*
+   * The following styles are auto-applied to elements with
+   * transition="modal" when their visibility is toggled
+   * by Vue.js.
+   *
+   * You can easily play with the modal transition by editing
+   * these styles.
+   */
+
+  .modal-enter
+    opacity 0
+  .modal-leave-active
+    opacity 0
+  .modal-enter .modal-container,
+  .modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
